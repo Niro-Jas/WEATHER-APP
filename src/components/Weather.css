@@ -1,4 +1,4 @@
-.weather{
+.weather {
     place-self: center;
     padding: 50px;
     border-radius: 10px;
@@ -6,75 +6,120 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Make background cover entire container */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* full screen height */
+    box-sizing: border-box;
 }
-.search-bar{
+
+/* Search bar */
+.search-bar {
     display: flex;
     align-items: center;
     gap: 14px;
+    width: 100%;
+    max-width: 500px;
 }
-.search-bar input{
-    padding:25px;
-    border: none;
-    height: 50px;
-    outline: none;
-    border-radius: 40px;
-    background: #232828;
-    color: #626262;
-    font-size: medium;
-}
-.search-bar input{
-    padding-left:25px;
+.search-bar input {
+    padding-left: 25px;
     border: none;
     height: 45px;
     outline: none;
     border-radius: 40px;
     background: #ebfffc;
     color: #626262;
-    font-size: 18;
+    font-size: 18px;
+    flex: 1;
 }
-.search-bar img{
+.search-bar img {
     width: 45px;
     padding: 10px;
     border-radius: 50%;   
-     cursor: pointer;
+    cursor: pointer;
     background: #ebfffc;
 }
+
+/* Weather icon */
 .weather-icon {
     width: 150px;
-    margin: 30px 0 ;
+    margin: 30px 0;
 }
- .temperature{
+
+/* Temperature & location */
+.temperature {
     color: rgb(235, 223, 223);
     font-size: 70px;
     line-height: 1;
+    text-align: center;
 }
- .location{
+.location {
     color: white;
     font-size: 40px;
-    line-height:1.3;
+    line-height: 1.3;
+    text-align: center;
 }
-.weather-data{
+
+/* Weather details */
+.weather-data {
     width: 100%;
-    margin-top:40px ;
+    margin-top: 40px;
     color: #fff;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* wrap on smaller screens */
 }
-.weather-data .col{
+.weather-data .col {
     display: flex;
     align-items: flex-start;
     gap: 15px;
     padding: 10px;
     font-size: 22px;
+    flex: 1 1 140px; /* responsive width */
 }
-.weather-data .col span{
+.weather-data .col span {
     font-size: 16px;
     display: block;
 }
-.weather-data .col img
-{
+.weather-data .col img {
     width: 25px;
     margin-top: 10px;
-
 }
 
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 480px) {
+    .weather {
+        padding: 20px;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+    .search-bar {
+        gap: 10px;
+    }
+    .search-bar input {
+        height: 40px;
+        font-size: 16px;
+    }
+    .search-bar img {
+        width: 35px;
+        padding: 8px;
+    }
+    .weather-icon {
+        width: 100px;
+        margin: 20px 0;
+    }
+    .temperature {
+        font-size: 45px;
+    }
+    .location {
+        font-size: 25px;
+    }
+    .weather-data .col {
+        font-size: 18px;
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+    .weather-data .col img {
+        width: 20px;
+    }
+}
